@@ -1,8 +1,19 @@
 import { Hono } from "hono";
+import { cors } from "hono/cors";
+import { logger } from "hono/logger";
 import { Scalar } from "@scalar/hono-api-reference";
 import { openAPIRouteHandler, describeRoute } from "hono-openapi";
+import { log } from "./middlewares/logger";
 
 const app = new Hono();
+
+app.use(
+  "*",
+  logger((str, c) => {
+    log.info(str);
+  }),
+  cors(),
+);
 
 app.get(
   "/",
