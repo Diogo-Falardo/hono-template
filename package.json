@@ -5,6 +5,7 @@
   },
   "dependencies": {
     "@hono/standard-validator": "^0.2.2",
+    "@loglayer/transport-simple-pretty-terminal": "^3.0.3",
     "@scalar/hono-api-reference": "^0.10.6",
     "dotenv": "^17.4.1",
     "drizzle-orm": "^0.45.2",
