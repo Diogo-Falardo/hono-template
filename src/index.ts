@@ -3,7 +3,7 @@ import { cors } from "hono/cors";
 import { logger } from "hono/logger";
 import { Scalar } from "@scalar/hono-api-reference";
 import { openAPIRouteHandler, describeRoute } from "hono-openapi";
-import { log } from "./middlewares/logger";
+import { log } from "./middlewares/logger.ts";
 
 const app = new Hono();
 
@@ -27,7 +27,7 @@ app.get(
           "text/plain": {
             schema: {
               type: "string",
-              example: "bloop hono template!",
+              example: "Hono deno template!",
             },
           },
         },
@@ -35,7 +35,7 @@ app.get(
     },
   }),
   (c) => {
-    return c.text("bloop hono template!");
+    return c.text("Hono deno template!");
   },
 );
 
@@ -44,9 +44,9 @@ app.get(
   openAPIRouteHandler(app, {
     documentation: {
       info: {
-        title: "Hono bun template API from bloop",
+        title: "Hono deno template API from bloop",
         version: "1.0.0",
-        description: "Hono bun template",
+        description: "Hono deno template",
       },
       servers: [{ url: "http://localhost:3000", description: "Local Server" }],
     },

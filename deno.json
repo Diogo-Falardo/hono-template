@@ -1,0 +1,15 @@
+{
+  "tasks": {
+    "dev": "deno serve --watch --port 3000 -A src/index.ts",
+    "start": "deno serve --port 3000 -A src/index.ts",
+    "db:generate": "deno run -A npm:drizzle-kit generate",
+    "db:migrate": "deno run -A npm:drizzle-kit migrate",
+    "db:studio": "deno run -A npm:drizzle-kit studio"
+  },
+  "nodeModulesDir": "auto",
+  "compilerOptions": {
+    "strict": true,
+    "jsx": "react-jsx",
+    "jsxImportSource": "hono/jsx"
+  }
+}

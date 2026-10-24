@@ -9,12 +9,19 @@ DATABASE_URL=
 
 To install dependencies:
 ```sh
-bun install
+deno install
 ```
 
 To run:
 ```sh
-bun run dev
+deno task dev
 ```
 
 open http://localhost:3000
+
+Database (drizzle-kit):
+```sh
+deno task db:generate   # generate migrations from src/db/schema.ts
+deno task db:migrate    # apply migrations
+deno task db:studio     # open Drizzle Studio
+```
